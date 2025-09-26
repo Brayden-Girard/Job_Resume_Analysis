@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            width: 350px;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8f9fa;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h2 {
+            color: #2c3e50;
+            margin: 0;
+        }
+        .section {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .section h3 {
+            margin-top: 0;
+            color: #34495e;
+            font-size: 14px;
+        }
+        textarea {
+            width: 100%;
+            min-height: 80px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 8px;
+            font-size: 12px;
+            resize: vertical;
+            box-sizing: border-box;
+        }
+        .btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            width: 100%;
+            margin: 5px 0;
+        }
+        .btn:hover {
+            background: #2980b9;
+        }
+        .btn-secondary {
+            background: #95a5a6;
+        }
+        .btn-secondary:hover {
+            background: #7f8c8d;
+        }
+        .status {
+            padding: 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            text-align: center;
+            margin: 10px 0;
+        }
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h2>🎯 Job Analyzer</h2>
+    </div>
+
+    <div class="section">
+        <h3>📄 Your Resume Summary</h3>
+        <textarea id="resumeText" placeholder="Paste key points from your resume: skills, experience, achievements, etc."></textarea>
+    </div>
+
+    <div class="section">
+        <h3>⚖️ Your Job Preferences</h3>
+        <textarea id="preferencesText" placeholder="Define your boundaries and preferences:
+- Salary range
+- Work-life balance requirements  
+- Remote/hybrid/onsite preference
+- Company size preference
+- Industry preferences
+- Deal breakers"></textarea>
+    </div>
+
+    <button id="saveSettings" class="btn">💾 Save Settings</button>
+    <button id="analyzeJob" class="btn">🔍 Analyze Current Job</button>
+    <button id="testScraper" class="btn btn-secondary">🧪 Test Scraper</button>
+
+    <div class="section">
+        <h3>📤 Export Options</h3>
+        <button id="viewHistory" class="btn btn-secondary">📋 View Analysis History</button>
+        <button id="exportData" class="btn btn-secondary">💾 Export Results</button>
+        <button id="webhookSettings" class="btn btn-secondary">🔗 Webhook Settings</button>
+    </div>
+
+    <div id="status"></div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

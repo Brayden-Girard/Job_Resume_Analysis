@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "Job Listing Analyzer",
+  "version": "1.0",
+  "description": "Analyze job listings against your resume and preferences",
+  
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting",
+    "downloads"
+  ],
+  
+  "host_permissions": [
+    "https://*/*",
+    "http://*/*"
+  ],
+  
+  "background": {
+    "service_worker": "background.js"
+  },
+  
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.linkedin.com/jobs/*",
+        "*://*.indeed.com/viewjob*",
+        "*://*.glassdoor.com/job-listing/*",
+        "*://*.monster.com/job-openings/*",
+        "*://*.ziprecruiter.com/jobs/*"
+      ],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
+  ],
+  
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Job Analyzer"
+  },
+  
+  "web_accessible_resources": [
+    {
+      "resources": [],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
